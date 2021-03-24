@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dictionary</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js"></script>
+</head>
+
+<body>
+  <div>
+    <h1>Dictionary</h1>
+    <form onsubmit="return false">
+      <label for="word"></label>Type your word here<br>
+      <input class="inputText" type="text" id="word" pattern="^[a-z]+$" title="Only lowercase letters allowed" class="text"><br>
+      <input class="button" type="submit" value="Add" onclick="addWord()">
+      <input class="button" type="button" value="Search" onclick="searchWord()">
+    </form>
+  </div>
+  <div>
+    <h2>Word List</h2>
+    <li class="wordList" id="wordList">
+      example word
+    </li>
+  </div>
+</body>
+
+</html>
