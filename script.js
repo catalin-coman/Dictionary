@@ -1,33 +1,30 @@
-// we attach the input word to the wordList
-function addWord() {
-    // allowing only lowercase letters
-    if (document.getElementById("word").validity.patternMismatch) {
-        alert("Please type a valid word");
-    } else {
-        var searchedWord = document.getElementById("word").value;
-        var wordList = document.getElementById("wordList").innerText.toString();
-        
-        // checking if the word is already on the wordList
-        if (wordList.includes(searchedWord)) {
-            alert("The word is already on the list");
+var wordArray = [];
 
-        // adding the input word to the wordList
-        } else {
-            var node = document.createElement("li");
-            var textnode = document.createTextNode(document.getElementById("word").value);
-            node.appendChild(textnode);
-            document.getElementById("wordList").appendChild(node);
-        }
+// we add the input word to the array of words
+function addWord() {
+
+  // allowing only lowercase letters
+  if (document.getElementById("word").validity.patternMismatch) {
+    alert("Please type a valid word");
+  } else {
+
+    // checking if the word is already in the array
+    if (wordArray.includes(document.getElementById("word").value)) {
+      alert("The word is already on the list");
     }
+
+    // if not we add it to the array
+    else {
+      wordArray.push(document.getElementById("word").value);
+    }
+  }
 }
 
-// we search the input word in the wordList
+// searching the word in the array of words
 function searchWord() {
-    var searchedWord = document.getElementById("word").value;
-    var wordList = document.getElementById("wordList").innerText.toString();
-    if (wordList.includes(searchedWord)) {
-        alert("The word is in the list");
-    } else {
-        alert("The word is NOT in the list");
-    }
+  if (wordArray.includes(document.getElementById("word").value)) {
+    alert("The word is in the list");
+  } else {
+    alert("The word is NOT in the list");
+  }
 }
